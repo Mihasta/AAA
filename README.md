@@ -1,3 +1,3 @@
 # Hello World
 
-This is my new project pizdiginima
+This is my new project
