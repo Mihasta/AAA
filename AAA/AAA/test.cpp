@@ -7,7 +7,6 @@
 
 BOOST_AUTO_TEST_CASE( test_case1 )
 {
-	
 	BOOST_TEST_CHECK(numbers_lt_20_to_string(1) == string("один"));
 	BOOST_TEST_CHECK(numbers_lt_20_to_string(2) == string("два"));
 	BOOST_TEST_CHECK(numbers_lt_20_to_string(3) == string("три"));
@@ -27,15 +26,31 @@ BOOST_AUTO_TEST_CASE( test_case1 )
 	BOOST_TEST_CHECK(numbers_lt_20_to_string(17) == string("семьнадцать"));
 	BOOST_TEST_CHECK(numbers_lt_20_to_string(18) == string("восемьнадцать"));
 	BOOST_TEST_CHECK(numbers_lt_20_to_string(19) == string("девятьнадцать"));
-	BOOST_TEST_CHECK(numbers_lt_20_to_string(21) == string("двадцать один"));
-	BOOST_TEST_CHECK(numbers_lt_20_to_string(32) == string("тридцать два"));
-	BOOST_TEST_CHECK(numbers_lt_20_to_string(43) == string("сорок три"));
-	BOOST_TEST_CHECK(numbers_lt_20_to_string(54) == string("пятьдесять четыре"));
-	BOOST_TEST_CHECK(numbers_lt_20_to_string(65) == string("шестьдесять пять"));
-	BOOST_TEST_CHECK(numbers_lt_20_to_string(76) == string("семьдесять шесть"));
-	BOOST_TEST_CHECK(numbers_lt_20_to_string(87) == string("восемьдесять семь"));
-	BOOST_TEST_CHECK(numbers_lt_20_to_string(98) == string("девяносто восемь"));
-
 }
 
+BOOST_AUTO_TEST_CASE( test_case2 )
+{
+	BOOST_TEST_CHECK(number_less_100_to_string(20) == string("двадцать"));
+	BOOST_TEST_CHECK(number_less_100_to_string(30) == string("тридцать"));
+	BOOST_TEST_CHECK(number_less_100_to_string(40) == string("сорок"));
+	BOOST_TEST_CHECK(number_less_100_to_string(50) == string("пятьдесять"));
+	BOOST_TEST_CHECK(number_less_100_to_string(60) == string("шестьдесять"));
+	BOOST_TEST_CHECK(number_less_100_to_string(70) == string("семьдесять"));
+	BOOST_TEST_CHECK(number_less_100_to_string(80) == string("восемьдесять"));
+	BOOST_TEST_CHECK(number_less_100_to_string(90) == string("девяносто"));
+}
+
+BOOST_AUTO_TEST_CASE( test_case3 )
+{
+	BOOST_TEST_CHECK(number_less_1000_to_string(100) == string("сто"));
+	BOOST_TEST_CHECK(number_less_1000_to_string(200) == string("двести"));
+	BOOST_TEST_CHECK(number_less_1000_to_string(300) == string("триста"));
+	BOOST_TEST_CHECK(number_less_1000_to_string(400) == string("четыреста"));
+	BOOST_TEST_CHECK(number_less_1000_to_string(500) == string("пятьсот"));
+	BOOST_TEST_CHECK(number_less_1000_to_string(600) == string("шестьсот"));
+	BOOST_TEST_CHECK(number_less_1000_to_string(700) == string("семьсот"));
+	BOOST_TEST_CHECK(number_less_1000_to_string(800) == string("восемьсот"));
+	BOOST_TEST_CHECK(number_less_1000_to_string(900) == string("девятьсот"));
+	BOOST_TEST_CHECK(number_less_1000_to_string(137) == string("сто тридцать семь"));
+}
 #endif
