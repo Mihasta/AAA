@@ -106,8 +106,14 @@ string currency_to_string(
     int decimal_value, string sd1, string sd2, string sd3)
 {
     string answer;
-	answer = objects_less_100_to_string(integer_value, si1, si2, si3);
-	if (decimal_value) answer = answer + ", " + objects_less_100_to_string(decimal_value, sd1, sd2, sd3);
+	if (integer_value) {
+		answer = objects_less_100_to_string(integer_value, si1, si2, si3);
+		if (decimal_value) answer = answer + ", " + objects_less_100_to_string(decimal_value, sd1, sd2, sd3);
+	}
+	else
+	{
+		if (decimal_value) answer = objects_less_100_to_string(decimal_value, sd1, sd2, sd3);
+	}
     return answer;
 }
 
