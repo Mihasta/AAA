@@ -6,26 +6,26 @@ string numbers_lt_20_to_string(int number)
 	
 	switch (number)
 	{
-	case 1: answer = "один"; break;
-	case 2: answer = "два"; break;
-	case 3: answer = "три"; break;
-	case 4: answer = "четыре"; break;
-	case 5: answer = "п€ть"; break;
-	case 6: answer = "шесть"; break;
-	case 7: answer = "семь"; break;
-	case 8: answer = "восемь"; break;
-	case 9: answer = "дев€ть"; break;
-	case 10: answer = "дес€ть"; break;
-	case 11: answer = "одиннадцать"; break;
-	case 12: answer = "двенадцать"; break;
-	case 13: answer = "тринадцать"; break;
-	case 14: answer = "четырнадцать"; break;
-	case 15: answer = "п€тьнадцать"; break;
-	case 16: answer = "шестьнадцать"; break;
-	case 17: answer = "семьнадцать"; break;
-	case 18: answer = "восемьнадцать"; break;
-	case 19: answer = "дев€тьнадцать"; break;
-	default: break;
+		case 1: answer = "один"; break;
+		case 2: answer = "два"; break;
+		case 3: answer = "три"; break;
+		case 4: answer = "четыре"; break;
+		case 5: answer = "п€ть"; break;
+		case 6: answer = "шесть"; break;
+		case 7: answer = "семь"; break;
+		case 8: answer = "восемь"; break;
+		case 9: answer = "дев€ть"; break;
+		case 10: answer = "дес€ть"; break;
+		case 11: answer = "одиннадцать"; break;
+		case 12: answer = "двенадцать"; break;
+		case 13: answer = "тринадцать"; break;
+		case 14: answer = "четырнадцать"; break;
+		case 15: answer = "п€тьнадцать"; break;
+		case 16: answer = "шестьнадцать"; break;
+		case 17: answer = "семьнадцать"; break;
+		case 18: answer = "восемьнадцать"; break;
+		case 19: answer = "дев€тьнадцать"; break;
+		default: break;
 	}
 	return answer;
 }
@@ -81,4 +81,35 @@ string number_less_1000_to_string(int number)
 	}
 	return answer;
 }
+
+string objects_less_100_to_string(int number, string s1, string s2, string s3)
+{
+    string answer;
+	int remainder = number % 10;
+	answer = number_less_1000_to_string(number);
+	if (number > 10 & number < 15) answer = answer + " " + s3;
+	else {
+		switch (remainder)
+		{
+		case 1: answer = answer + " " + s1; break;
+		case 2: answer = answer + " " + s2; break;
+		case 3: answer = answer + " " + s2; break;
+		case 4: answer = answer + " " + s2; break;
+		default: answer = answer + " " + s3; break;
+		}
+	}
+    return answer;
+}
+
+string currency_to_string(
+    int integer_value, string si1, string si2, string si3,
+    int decimal_value, string sd1, string sd2, string sd3)
+{
+    string answer;
+	answer = objects_less_100_to_string(integer_value, si1, si2, si3);
+	if (decimal_value) answer = answer + ", " + objects_less_100_to_string(decimal_value, sd1, sd2, sd3);
+    return answer;
+}
+
+
 
