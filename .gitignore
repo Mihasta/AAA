@@ -1,0 +1,9 @@
+boost_1_69_0/
+*.exe
+*.pdb
+*.filters
+*.user
+*.opensdf
+*.sdf
+*.ilk
+*.suo
